@@ -1,3 +1,4 @@
+/*
 provider "aws" {
   region = "us-east-1"
   }
@@ -11,3 +12,4 @@ tags = {
     Name = var.instance_name[count.index]
 }
 }
+*/
