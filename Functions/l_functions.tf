@@ -25,11 +25,12 @@ resource "aws_key_pair" "loginkey" {
     public_key = "file(${path.module}/id_ras.txt)" 
 }
 
+variable "test" {}
   resource "aws_instance" "dev" {
   ami = lookup(var.ami,var.region)
   instance_type = "t2.micro"
   key_name = aws_key_pair.loginkey.key_name
-  count = 2
+  count = var.test == true ? 2 : 0
 
   tags = {
     Name = element(var.names,count.index)
