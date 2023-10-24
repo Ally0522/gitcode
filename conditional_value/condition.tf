@@ -1,3 +1,4 @@
+/*
 provider "aws" {
   region = "us-east-1"
   }
@@ -13,4 +14,4 @@ resource "aws_instance" "dev" {
   instance_type = var.list[1]
   count = var.istest == false ? 1 : 0
 }
-
+*/
